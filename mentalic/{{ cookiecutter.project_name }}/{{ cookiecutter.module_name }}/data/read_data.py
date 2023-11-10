@@ -19,3 +19,5 @@ test_dataset_Y = test_dataset_X, test_dataset_Y
 # Validation/Benchmark
 validation_dataset_X, validation_dataset_Y = None, None
 validation_benchmark = None # to compare to validation_dataset_Y /predictions
+
+# Add any other data you might use
