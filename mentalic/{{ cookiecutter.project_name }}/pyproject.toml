@@ -1,0 +1,69 @@
+[tool.poetry]
+name = "{{cookiecutter.module_name }}"
+version = "{{ cookiecutter.version }}"
+description = "{{cookiecutter.description }}"
+authors = ["{{cookiecutter.author}}, {{cookiecutter.full_name}} <{{cookiecutter.email}}>"]
+readme = "README.md"
+license = "LICENSE"
+homepage = "https://github.com/alquimodelia/{{cookiecutter.project_name}}"
+repository = "{{cookiecutter.git_remote}}"
+documentation = "https://alquimodelia.github.io/{{cookiecutter.project_name}}/"
+keywords = "{{ cookiecutter.keywords.split(',') }}"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/alquimodelia/{{cookiecutter.project_name}}/issues"
+"Source Code" = "https://github.com/alquimodelia/{{cookiecutter.project_name}}"
+
+#TODO: Add dependencies
+
+
+[tool.poetry.dependencies]
+python = "^{{cookiecutter.python_version}}"
+
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "*"
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+poetry = "*"
+ruff = "*"
+black = "*"
+isort = "*"
+
+[tool.poetry.group.tests]
+optional = true
+
+[tool.poetry.group.tests.dependencies]
+pytest = "*"
+
+
+[build-system]
+requires = ["setuptools","poetry"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 79
+
+[tool.ruff]
+line-length = 79
+select = ["E", "F", "B", "Q"]
+show-fixes = true
+ignore = ["E501"]
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests",]
+pythonpath = ["."]
+
+
+[tool.poetry.scripts]
+"{{ cookiecutter.module_name }}" = "{{ cookiecutter.module_name }}.__main__:main"
+
