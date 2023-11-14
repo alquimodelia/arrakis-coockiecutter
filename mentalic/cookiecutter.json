@@ -1,0 +1,15 @@
+{
+    "project_name": "project_name",
+    "module_name": "{{cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_')}}",
+    "author": "Alquimodelia",
+    "full_name": "First LastName",
+    "email": "Your address email (eg. you@example.com)",
+    "description": "A short description of the project.",
+    "open_source_license": ["MIT", "BSD-3-Clause", "No license file"],
+    "python_interpreter": ["python3", "python"],
+    "python_version":"3.8",
+    "poetry_version":"1.5.0",
+    "version":"0.0.1",
+    "keywords": "Keywords for your project (comma separated)",
+    "git_remote": "https://github.com/alquimodelia/{{cookiecutter.project_name}}"
+}
